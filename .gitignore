@@ -1,5 +1,16 @@
 # Temp files
 *~
+./temp/
 
-# Crawled results
+# Models folder
+*.bin
+*.dat
+./models/
+
+# Data folder
 *.txt
+./data/
+
+# Results folder
+./results/
+

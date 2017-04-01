@@ -13,6 +13,8 @@ root_url_aidscare = 'http://www.aidscarechina.org'
 root_url_aidsorg = 'http://www.aids.org.cn'
 root_url_jinde = 'http://www.jinde.org'
 
+root_dir_results = './results/crawling/'
+
 # util functions for website "aidscare"
 
 def get_url_aidscare(num):
@@ -65,7 +67,7 @@ def get_data_jinde(url):
 
 if __name__=='__main__':
   if website == 'aidscare':
-    outfile = codecs.open('text_aidscare.txt', 'w', 'utf-8')
+    outfile = codecs.open(root_dir_results + 'text_aidscare.txt', 'w', 'utf-8')
     for num in range(1, 650):
       dataList = []
       url = get_url_aidscare(num)
@@ -78,7 +80,7 @@ if __name__=='__main__':
         json.dump(jsonData, outfile, ensure_ascii=False, indent=2)
         outfile.write('\n\n')
   elif website == 'aidsorg':
-    outfile = codecs.open('text_aidsorg.txt', 'w', 'utf-8')
+    outfile = codecs.open(root_dir_results + 'text_aidsorg.txt', 'w', 'utf-8')
     for num in range(1, 5000):
       dataList = []
       url = get_url_aidsorg(num)
@@ -91,7 +93,7 @@ if __name__=='__main__':
         json.dump(jsonData, outfile, ensure_ascii=False, indent=2)
         outfile.write('\n\n')
   else:
-    outfile = codecs.open('text_jinde.txt', 'w', 'utf-8')
+    outfile = codecs.open(root_dir_results + 'text_jinde.txt', 'w', 'utf-8')
     for num in range(1, 2400):
       dataList = []
       url = get_url_jinde(num)
