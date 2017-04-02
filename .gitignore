@@ -12,5 +12,6 @@
 ./data/
 
 # Results folder
+*.mat
 ./results/
 
